@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>宠物信息修改</title>
+    <style type="text/css">
+        body form table tr td div {
+            text-align: center;
+        }
+        #tj {
+            text-align: center;
+        }
+    </style></head>
+<body background="">
+<h3>&nbsp;</h3>
+<form action="adminupdatepet" >
+    <div align="center">
+        <h1>
+            宠物信息修改<br><br>
+        </h1>
+    </div>
+    <table width="98%" height="435" border="1" cellspacing="0" bgcolor="#f0f8ff">
+        <tr>
+            <td width="23%"><div>
+                <table width="100%" border="0">
+                    <tr>
+                        <td width="28%">UID:</td>
+                        <td width="72%"><input th:value="${petadmin.UID}" readonly name="UID" type="hidden"> <div th:text="${petadmin.UID}"></div></td>
+                    </tr>
+                </table>
+            </div></td>
+            <td width="24%"><div >
+                <table width="100%" border="0">
+                    <tr>
+                        <td width="31%">分类:</td>
+                        <td width="69%"><input  th:value="${petadmin.classify}"  type="text" name="classify"></td>
+                    </tr>
+                </table>
+            </div></td>
+            <td width="30%"><div>
+                <table width="100%" border="0">
+                    <tr>
+                        <td>疫苗接种时间:</td>
+                        <td><input  th:value="${petadmin.vaccine}"   type="text" name="vaccine"></td>
+                    </tr>
+                </table>
+            </div></td>
+        </tr>
+        <tr>
+            <td height="63"><div >
+                <table width="100%" border="0">
+                    <tr>
+                        <td width="28%">昵称:</td>
+                        <td width="72%"><input   th:value="${petadmin.nickname}"type="text" name="nickname"></td>
+                    </tr>
+                </table>
+            </div></td>
+            <td><div>
+                <table width="100%" border="0">
+                    <tr>
+                        <td width="31%">年龄:</td>
+                        <td width="69%"><input th:value="${petadmin.age}"  type="text" name="age"></td>
+                    </tr>
+                </table>
+            </div></td>
+            <td><div>
+                <table width="100%" border="0">
+                    <tr>
+                        <td width="40%">雌雄:</td>
+                        <td width="60%"><input th:value="${petadmin.sex}" type="text" name="sex"></td>
+                    </tr>
+                </table>
+            </div></td>
+        </tr>
+        <tr>
+            <td rowspan="2"><div>
+                <table width="100%" border="0">
+                    <tr>
+                        <td width="28%">病史:</td>
+                        <td width="72%"><textarea th:utext="${petadmin.anamnesis}" name="anamnesis" cols="" rows=""></textarea></td>
+                    </tr>
+                </table>
+            </div></td>
+            <td rowspan="2"><div>
+                <table width="100%" border="0">
+                    <tr>
+                        <td width="31%">喜好:</td>
+                        <td width="69%"><textarea  th:text="${petadmin.likeq}" name="likeq" cols="" rows=""></textarea></td>
+                    </tr>
+                </table>
+            </div></td>
+            <td><div>
+                <table width="100%" border="0">
+                    <tr>
+                        <td width="40%">训练状况:</td>
+                        <td width="60%"><input th:value="${petadmin.drill}" type="text" name="drill"></td>
+                    </tr>
+                </table>
+            </div></td>
+        </tr>
+        <tr>
+            <td height="32"><div>
+                <table width="100%" border="0">
+                    <tr>
+                        <td width="40%">价格:</td>
+                        <td width="60%"><input  th:value="${petadmin.offeringprice}" type="text" name="offeringprice"></td>
+                    </tr>
+                </table>
+            </div></td>
+        </tr>
+        <tr>
+            <td rowspan="2"><div align="center">
+                <table width="100%" border="0">
+                    <tr>
+                        <td width="28%">健康状况:</td>
+                        <td width="72%"><textarea th:text="${petadmin.physicalcondition}" name="physicalcondition" cols="" rows=""></textarea></td>
+                    </tr>
+                </table>
+            </div></td>
+            <td rowspan="2"><div align="center">
+                <table width="100%" border="0">
+                    <tr>
+                        <td width="31%">饮食结构:</td>
+                        <td width="69%"><textarea th:text="${petadmin.dietarystructure}" name="dietarystructure" cols="" rows=""></textarea></td>
+                    </tr>
+                </table>
+            </div></td>
+            <td height="47"><div>
+                <table width="100%" border="0">
+                    <tr>
+                        <td width="40%">攻击性:</td>
+                        <td width="60%"><input th:value="${petadmin.aggressivity}" type="text" name="aggressivity"></td>
+                    </tr>
+                </table>
+            </div></td>
+        </tr>
+        <tr>
+            <td height="48"><div>
+                <table width="100%" border="0">
+                    <tr>
+                        <td width="40%">到店时间:</td>
+                        <td width="60%"><input  th:value="${petadmin.commentthree}" type="text" name="commentthree"></td>
+                    </tr>
+                </table>
+            </div></td>
+        </tr>
+        <tr>
+            <td rowspan="2"><div align="center">
+                <table width="100%" border="0">
+                    <tr>
+                        <td width="28%">健康备注:</td>
+                        <td width="72%"><textarea  th:text="${petadmin.commentone}" name="commentone" cols="" rows=""></textarea></td>
+                    </tr>
+                </table>
+            </div></td>
+            <td rowspan="2"><div align="center">
+                <table width="100%" border="0">
+                    <tr>
+                        <td width="31%">疫苗记录:</td>
+                        <td width="69%"><textarea  th:text="${petadmin.record}" name="record" cols="" rows="">
+              </textarea></td>
+                    </tr>
+                </table>
+            </div></td>
+            <td rowspan="2"><div>
+                <table width="100%" border="0">
+                    <tr>
+                        <td width="40%">注意事项:</td>
+                        <td width="60%"><textarea th:text="${petadmin.mattersneedattention}" name="mattersneedattention" cols="" rows=""></textarea></td>
+                    </tr>
+                </table>
+            </div></td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+            <td><div align="center">
+                <table width="100%" border="0">
+                    <tr>
+                        <td width="28%">出售状态:</td>
+                        <td width="72%"><input th:value="${petadmin.ifsell}" type="text" name="ifsell"></td>
+                    </tr>
+                </table>
+            </div></td>
+            <td><div align="center">
+                <table width="100%" border="0">
+                    <tr>
+                        <td width="31%">购买须知:</td>
+                        <td width="69%"><textarea th:text="${petadmin.purchasenotes}" name="purchasenotes" cols="" rows="">&nbsp;</textarea></td>
+                    </tr>
+                </table>
+            </div></td>
+            <td height="110" colspan="1" ><div  id="tj"><input  type="submit"value="修改"></div></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

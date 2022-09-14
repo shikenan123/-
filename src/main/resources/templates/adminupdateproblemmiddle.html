@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>处理上报的问题</title>
+</head>
+<body background="">
+<div align="center">
+    <form action="adminupdateproblem">
+        <table width="42%" border="0" align="center">
+            <tr>
+                <td colspan="2"> <h1 align="center">处理上报的问题</h1>
+                </td>
+            </tr>
+            <tr>
+                <td width="24%" height="49"><div align="center">ID:</div></td>
+                <td width="76%"><input th:value="${problem.ID}" readonly type="hidden" name="ID"> <span th:text="${problem.ID}"></span></td>
+            </tr>
+            <tr>
+                <td height="53"><div align="center">标题:</div></td>
+                <td><input th:value="${problem.title}" readonly type="hidden" name="title"><span th:text="${problem.title}"></span></td>
+            </tr>
+            <tr>
+                <td height="79"><div align="center">上报时间:</div></td>
+                <td><input th:value="${problem.timess}" readonly type="hidden" name="timess"><span th:text="${problem.timess}"></span></td>
+            </tr>
+            <tr>
+                <td height="51"><div align="center">上报人:</div></td>
+                <td><input th:value="${problem.pname}" readonly type="hidden" name="name"><span th:text="${problem.pname}"></span></td>
+            </tr>
+            <tr>
+                <td height="93"><div align="center">问题主题:</div></td>
+                <td><textarea name="body" cols="" rows="" readonly th:utext="${problem.body}" style="display:none" ></textarea><div th:text="${problem.body}"></div>
+                </td>
+            </tr>
+            <tr>
+                <td height="42"><div align="center">是否处理:</div></td>
+                <td><input th:value="${problem.isi}"  type="text" name="isi"></td>
+            </tr>
+            <tr>
+                <td height="73">
+                    <div align="center">处理意见:</div></td>
+                <td><textarea name="c" cols="" rows="" th:utext="${problem.c}" ></textarea></td>
+            </tr>
+            <tr>
+                <td height="80">&nbsp;</td>
+                <td><input type="submit"value="修改"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

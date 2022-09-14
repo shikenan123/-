@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  
+    <title>修改用户信息</title>
+</head>
+<body background="">
+<form action="adminupdateuser">
+    <div align="center">
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <table width="29%" border="0">
+            <tr>
+                <td colspan="2"><h1 align="center">修改用户信息</h1></td>
+            </tr>
+            <tr>
+                <td width="27%"><div align="center"></div></td>
+                <td width="73%"><input th:value="${user.UID}" type="hidden" name="UID"></td>
+            </tr>
+            <tr>
+                <td><div align="center">用户名</div></td>
+                <td><input  th:value="${user.username}" type="text" name="username"></td>
+            </tr>
+            <tr>
+                <td><div align="center">年龄</div></td>
+                <td><input th:value="${user.age}" type="text" name="age"></td>
+            </tr>
+            <tr>
+                <td><div align="center">性别</div></td>
+                <td><input  th:value="${user.sex}"  type="text" name="sex"></td>
+            </tr>
+            <tr>
+                <td><div align="center">权限</div></td>
+                <td><input th:value="${user.classify}" type="text" name="classify"></td>
+            </tr>
+            <tr>
+                <td><div align="center">电话</div></td>
+                <td><input th:value="${user.phone}" type="text" name="phone"></td>
+            </tr>
+            <tr>
+                <td><div align="center">密码</div></td>
+                <td><input  th:value="${user.password}" type="text" name="password"></td>
+            </tr>
+            
+            
+            
+            <tr>
+                <td colspan="2"><input type="submit" value="修改"></td>
+            </tr>
+        </table>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户登录</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+        }
+        .conta {
+            height: 100%;
+            background-image: linear-gradient(to right, #fbc2eb, #a6c1ee);
+        }
+        .login {
+            background-color: #fff;
+            width: 358px;
+            height: 588px;
+            border-radius: 15px;
+            padding: 0 50px;
+            left: 50%;
+            top: 50%;
+            position: relative;
+            transform: translate(-50%, -50%);
+        }
+        .header {
+            font-size: 38px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 200px;
+        }
+        .input{
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+            border: 0;
+            padding: 10px;
+            border-bottom: 1px solid rgb(125, 123, 123);
+            font-size: 14px;
+            outline: none;
+        }
+        .input:placeholder {
+            text-transform: uppercase;
+        }
+        .btn {
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            margin-top: 40px;
+            color: rgb(125, 123, 123);
+            background-image: linear-gradient(to right, 87cefa, #fbc2eb);
+        }
+    </style>
+</head>
+<body>
+    <div class="conta">
+        <div class="login">
+         <form action="login" method="post">
+            <div class="header">欢迎使用本系统</div>
+                <input type="text" name="UID" placeholder="用户名" class="input">
+                <input type="password" name="password" placeholder="密码" class="input">
+                <button class="btn" type="submit">进入系统</button>
+         </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>问题信息</title>
+</head>
+<body background="">
+<div align="center">
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <table width="51%" border="1" cellspacing="0">
+        <tr>
+            <td colspan="2"> <div align="center">问题信息</div></td></tr>
+        <tr>
+            <td width="39%"><div align="center">ID:</div></td>
+            <td width="61%"><input th:value="${problem.ID}" readonly type="hidden" name="ID"><div th:text="${problem.ID}"></div></td>
+        </tr>
+        <tr>
+            <td><div align="center">标题:</div></td>
+            <td><input th:value="${problem.title}" readonly type="hidden" name="title"><div th:text="${problem.title}"></div></td>
+        </tr>
+        <tr>
+            <td><div align="center">上报时间:</div></td>
+            <td><input th:value="${problem.timess}" readonly type="hidden" name="timess"><div th:text="${problem.timess}"></div></td>
+        </tr>
+        <tr>
+            <td><div align="center">上报人:</div></td>
+            <td><input th:value="${problem.pname}" readonly type="hidden" name="name"><div th:text="${problem.pname}"></div></td>
+        </tr>
+        <tr>
+            <td><div align="center">是否处理:</div></td>
+            <td><input th:value="${problem.isi}"  type="hidden" name="isi"><div th:text="${problem.isi}"></div></td>
+        </tr>
+        <tr>
+            <td height="88"><div align="center">问题主题:</div></td>
+            <td><textarea name="body" cols="" rows="" readonly th:utext="${problem.body}" style="display:none"></textarea><div th:text="${problem.body}"></div> </td>
+        </tr>
+        <tr>
+            <td height="84">
+                <div align="center">处理意见:</div></td>
+            <td><textarea name="c" cols="" rows="" th:utext="${problem.c}" style="display:none" ></textarea><div th:text="${problem.c}"></div></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

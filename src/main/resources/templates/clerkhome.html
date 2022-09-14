@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        .top{
+            width: 100%;
+            height: 100px;
+            background: #323437;
+            border-bottom: 1px solid gray;
+            text-align: center;
+            line-height: 100px;
+            color: #fff;
+            font-size: 20px;
+        }
+        .content{
+            width: 100%;
+            height: calc(100% - 101px);
+            display: flex;
+        }
+        .nav{
+            width: 200px;
+            height: 100%;
+            background: #323437;
+        }
+        iframe{
+            flex: 1;
+            height: 100%;
+            margin: 0;
+            border: 0;
+        }
+        ul li a{
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 20px;
+            text-align: center;
+            padding: 20px 0;
+        }
+        a{
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 20px;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="top">
+    <div>
+        <table width="100%" border="0" >
+            <tr>
+                <td width="10%" height="100" align="left" valign="top"><div  >宠物管理系统</div></td>
+                <td width="15%" height="100"><span th:text= "${user.username}"></span></td>
+                <td width="15%"><div  align="center"><a href="usergetuser" target="showBox">个人信息</a></div></td>
+                <td width="15%"><div align="center"><a href="userupdatepasswordmiddle" target="showBox">修改密码</a> </div></td>
+                <td width="15%"><div align="center"><a href="usercallus" target="showBox">联系开发者</a></div></td>
+                <td width="15%"><div align="center"><a href="userlogout" target="showBox">安全退出</a></div></td>
+                <td width="15%"><div align="center"><a href="useraboutus" target="showBox">关于我们</a></div></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="content">
+    <ul class="nav">
+        <li>
+            <a href="page0.html" target="showBox">欢迎页面</a>
+            <a href="clerkselectpet" target="showBox">宠物信息</a>
+            <a href="useraddproblemmiddle" target="showBox">上报问题</a>
+            <a href="myproblem" target="showBox">反馈问题</a>
+        </li>
+    </ul>
+    <iframe src="page0.html" name="showBox"></iframe>
+</div>
+</body>
+</html>

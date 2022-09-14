@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            function mouseover() {
+                var rows = document.getElementsByTagName('tr');
+                for (var i = 0; i < rows.length; i++) {
+                    rows[i].onmouseover = function () {
+                        this.className += 'hilite';
+                    }
+                    rows[i].onmouseout = function () {
+                        this.className = this.className.replace('hilite', '');
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/css">
+        #tbl tr:hover,#tbl tr.hilite
+        {
+            background-color: #c9d6ef;
+            color: #090808;
+        }
+        #ssk {
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 890px;
+        }
+        body {
+            background-image: url("static/bg1.jpeg");
+            background-repeat: no-repeat;
+        }
+        body div table tr td span a {
+            display: block;
+            text-decoration: none;
+            font-size: 20px;
+            text-align: center;
+            color: #323437;
+        }
+    </style></head>
+<body>
+<div>
+    <div id="ssk">
+        <form action="adminselectcaozuo" width="100%">
+            <input width="80%" type="text" name="keyword" placeholder="SearchByUID">
+            <input type="submit" name="button" id="button" value="提交">
+        </form>
+    </div>
+    <table width="95%" border="1" bgcolor="#f0f8ff" cellspacing="0" id="tbl">
+        <tr>
+            <td width="108"><div align="center">操作者UID</div></td>
+            <td width="55"><div align="center">事件</div></td>
+            <td width="108"><div align="center">创建时间</div></td>
+        </tr>
+        <tr th:each="c:${selectlist}">
+            <td align="center"> <span th:text="${c.userID}"/></td>
+            <td align="center"> <span th:text="${c.event}"/></td>
+            <td align="center"> <span th:text="${c.time}"/></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            function mouseover() {
+                var rows = document.getElementsByTagName('tr');
+                for (var i = 0; i < rows.length; i++) {
+                    rows[i].onmouseover = function () {
+                        this.className += 'hilite';
+                    }
+                    rows[i].onmouseout = function () {
+                        this.className = this.className.replace('hilite', '');
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/css">
+        #tbl tr:hover,#tbl tr.hilite
+        {
+            background-color: #e8d99c;
+            color: #683e3e;
+        }
+        #aaa {
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 780px;
+        }
+        body {
+            background-image: url("bg1.jpeg");
+            background-repeat: no-repeat;
+        }
+        body div table tr td span a{
+            display: block;
+            text-decoration: none;
+            font-size: 20px;
+            text-align: center;
+            color: #5c4726;
+        }
+    </style></head>
+<body>
+<div>
+    <div id="aaa"><form action="adminselectpet" width="100%">
+        <input width="80%" type="text" name="keywordpet" placeholder="SearchByUID"> <input type="submit" name="button" id="button" value="提交">
+    </form></div>
+    <table width="95%" border="1" bgcolor="#f8e1be" id="tbl" cellspacing="0">
+        <tr>
+            <td width="100"><div align="center">UID</div></td>
+            <td width="100"><div align="center">昵称</div></td>
+            <td width="100"><div align="center">分类</div></td>
+            <td width="100"><div align="center">最后修改时间</div></td>
+            <td width="100"><div align="center">操作</div></td>
+            <td width="100"><div align="center">操作</div></td>
+        </tr>
+        <tr th:each="p:${selectlistp}">
+            <td align="center"> <span th:text="${p.UID}"/></td>
+            <td align="center"> <span th:text="${p.nickname}"/></td>
+            <td align="center"> <span th:text="${p.classify}"/></td>
+            <td align="center"> <span th:text="${p.times}"/></td>
+            <td align="center"> <span><a th:href="'deletepet?UID='+${p.UID}">删除</a></span></td>
+            <td align="center"> <span><a th:href="'adminshowupdatepet?UID='+${p.UID}">修改/查看详情</a></span></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

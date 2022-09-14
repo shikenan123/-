@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        #tj{
+            margin-left: 50px;
+        }
+        #tbl tr:hover,#tbl tr.hilite
+        {
+            background-color: #f6b6c3;
+            color: #000000;
+        }
+        body div table tr td span a{
+            display: block;
+            text-decoration: none;
+            font-size: 20px;
+            text-align: center;
+            color: #4b2f35;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            function mouseover() {
+                var rows = document.getElementsByTagName('tr');
+                for (var i = 0; i < rows.length; i++) {
+                    rows[i].onmouseover = function () {
+                        this.className += 'hilite';
+                    }
+                    rows[i].onmouseout = function () {
+                        this.className = this.className.replace('hilite', '');
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div align="center">
+    <h1>查看宠物信息 </h1>
+</div>
+<div id="tj"><form action="breederselectpet" width="100%">
+    <input width="80%" type="textS" name="keywordpet" placeholder="SearchByUID">
+    <input type="submit" name="button" id="button" value="提交">
+</form>
+</div>
+<div ><table width="100%" border="0" id="tbl">
+    <tr>
+        <td width="100"><div align="center">UID</div></td>
+        <td width="100"><div align="center">昵称</div></td>
+        <td width="100"><div align="center">分类</div></td>
+        <td width="100"><div align="center">最后修改时间</div></td>
+        <td width="100"><div align="center">是否出售</div></td>
+        <td width="100"><div align="center">操作</div></td>
+    </tr>
+    <tr th:each="p:${selectlistp}">
+        <td align="center"> <span th:text="${p.UID}"/></td>
+        <td align="center"> <span th:text="${p.nickname}"/></td>
+        <td align="center"> <span th:text="${p.classify}"/></td>
+        <td align="center"> <span th:text="${p.times}"/></td>
+        <td align="center"> <span th:text="${p.ifsell}"/></td>
+        <td align="center"> <span><a th:href="'breederupdatepetmiddel?UID='+${p.UID}">查看详情</a></span></td>
+    </tr>
+</table>
+</div>
+</body>
+</html>

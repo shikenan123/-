@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户信息</title>
+</head>
+<body>
+
+    <div align="center">
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <table width="29%" border="0">
+            <tr>
+                <td colspan="2"><h1 align="center">用户信息</h1></td>
+            </tr>
+            <tr>
+                <td width="27%"><div align="center">UID</div></td>
+                <td width="73%"><div th:text="${user.UID}"></div>
+            </tr>
+            <tr>
+                <td><div align="center">用户名</div></td>
+                <td><div  th:text="${user.username}"></div>
+            </tr>
+            <tr>
+                <td><div align="center">年龄</div></td>
+                <td><div th:text="${user.age}" ></div>
+            </tr>
+            <tr>
+                <td><div align="center">性别</div></td>
+                <td><div  th:text="${user.sex}"  ></div>
+            </tr>
+            <tr>
+                <td><div align="center">权限</div></td>
+                <td><div th:text="${user.classify}" ></div>
+            </tr>
+            <tr>
+                <td><div align="center">电话</div></td>
+                <td><div th:text="${user.phone}" ></div>
+            </tr>
+            
+        </table>
+    </div>
+
+</body>
+</html>
